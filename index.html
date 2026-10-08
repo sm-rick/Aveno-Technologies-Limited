@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aveno Technologies Limited | Software & Technology Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef8ff',
+                            100: '#d9f0ff',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                            950: '#082f49'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-cube text-white text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-white">Aveno <span class="text-cyan-400">Tech</span></span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Technologies Limited</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a>
+                <a href="#services" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="#team" class="hover:text-cyan-400 transition-colors">Our Team</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Action Buttons -->
+        <div class="hidden md:flex items-center gap-4">
+            <button onclick="openAdminAuthModal()" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800 rounded-lg hover:bg-cyan-900/60 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-user-gear"></i> Admin Panel
+            </button>
+            <a href="#contact" class="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl shadow-lg shadow-cyan-500/25 hover:opacity-95 transition-opacity">
+                Get in Touch
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2 text-xl">
+            <i class="fa-solid fa-bars" id="mobileMenuIcon"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-4">
+        <a href="#home" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-cyan-400 font-medium">Home</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-cyan-400 font-medium">About Us</a>
+        <a href="#services" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-cyan-400 font-medium">Services</a>
+        <a href="#team" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-cyan-400 font-medium">Our Team</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-cyan-400 font-medium">Contact</a>
+        <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+            <button onclick="openAdminAuthModal(); toggleMobileMenu();" class="w-full py-2.5 text-xs font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800 rounded-lg text-center">
+                <i class="fa-solid fa-user-gear mr-2"></i> Admin Panel
+            </button>
+            <a href="#contact" onclick="toggleMobileMenu()" class="w-full py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl text-center">
+                Get in Touch
+            </a>
+        </div>
+    </div>
+</header>
+
+    <section id="home" class="relative overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-40 bg-slate-950">
+        <!-- Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/2 right-10 w-[400px] h-[400px] bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        Next-Gen IT & Software Solution Partner
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Transforming Ideas Into <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Powerful Digital Solutions</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0">
+                        Aveno Technologies Limited delivers cutting-edge software development, enterprise IT solutions, and digital transformation services right from Mirpur DOHS, Dhaka to global businesses.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="#services" class="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-xl shadow-cyan-500/20 hover:opacity-95 transition-all">
+                            Explore Services <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="px-8 py-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold hover:bg-slate-800 transition-all">
+                            Consult Our Team
+                        </a>
+                    </div>
+                    <!-- Stats Bar -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-3xl font-bold text-white">50+</div>
+                            <div class="text-xs text-slate-400 mt-1">Projects Completed</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-white">100%</div>
+                            <div class="text-xs text-slate-400 mt-1">Client Satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-white">24/7</div>
+                            <div class="text-xs text-slate-400 mt-1">Engineering Support</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic / Illustration Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative w-full aspect-square max-w-md mx-auto bg-gradient-to-br from-cyan-500/20 via-slate-900 to-blue-900/30 p-1 rounded-3xl border border-slate-800 shadow-2xl">
+                        <div class="w-full h-full bg-slate-900/90 rounded-[22px] p-6 flex flex-col justify-between relative overflow-hidden backdrop-blur-xl">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-2xl"></div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-cyan-400">aveno-core.sys</span>
+                            </div>
+                            <div class="space-y-4 my-auto">
+                                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700/60 font-mono text-xs text-slate-300">
+                                    <span class="text-cyan-400">&gt;</span> Initializing Aveno Engine v3.4...<br>
+                                    <span class="text-emerald-400">&gt;</span> Cloud Architecture: SECURE<br>
+                                    <span class="text-cyan-400">&gt;</span> Microservices: DEPLOYED<br>
+                                    <span class="text-amber-400">&gt;</span> Status: READY FOR SCALE
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-cyan-950/40 border border-cyan-800/50">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                                            <i class="fa-solid fa-shield-halved"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs font-semibold text-white">Enterprise Grade</div>
+                                            <div class="text-[10px] text-slate-400">Robust & Scalable Codebase</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-check"></i> Active</span>
+                                </div>
+                            </div>
+                            <div class="text-center text-xs text-slate-500">
+                                Mirpur DOHS, Dhaka, Bangladesh
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-900/60 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 border border-cyan-800 text-cyan-400 text-xs font-semibold uppercase tracking-wide">
+                        About Our Company
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                        Driving Innovation & Digital Excellence from Dhaka
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        <strong class="text-slate-200">Aveno Technologies Limited</strong> is a premier software development and IT solutions powerhouse based in the heart of Dhaka's tech hub at Mirpur DOHS. We specialize in engineering bespoke software products, highly scalable web & mobile apps, and robust cloud infrastructure for startups and established global enterprises.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="text-cyan-400 font-semibold mb-1"><i class="fa-solid fa-bullseye mr-2"></i> Our Mission</div>
+                            <p class="text-xs text-slate-400">To empower businesses worldwide with state-of-the-art software solutions that accelerate growth and efficiency.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="text-cyan-400 font-semibold mb-1"><i class="fa-solid fa-eye mr-2"></i> Our Vision</div>
+                            <p class="text-xs text-slate-400">To be a globally recognized technology leader known for relentless innovation, quality, and trust.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Info Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-20 -bottom-20 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl"></div>
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        Corporate Headquarters
+                    </h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-cyan-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block text-sm">Registered/Corporate Office</strong>
+                                <span class="text-slate-400 text-sm">House # 684, 3rd Floor, Avenue 6,<br>Mirpur DOHS, Dhaka-1216, Bangladesh</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-cyan-400"></i>
+                            <div>
+                                <strong class="text-white block text-sm">Email Us</strong>
+                                <span class="text-slate-400 text-sm">contact@avenotech.com</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-cyan-400"></i>
+                            <div>
+                                <strong class="text-white block text-sm">Phone</strong>
+                                <span class="text-slate-400 text-sm">+880 9600-000000 / +880 1700-000000</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 border border-cyan-800 text-cyan-400 text-xs font-semibold uppercase tracking-wide">
+                    What We Offer
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                    Comprehensive IT & Software Services
+                </h2>
+                <p class="text-slate-400">
+                    We combine technical mastery with strategic industry insight to build future-proof solutions.
+                </p>
+            </div>
+
+            <!-- Service Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Custom Software Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Tailored desktop and enterprise web applications engineered to match your precise business workflows and operational goals.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Web & Mobile Apps</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        High-performance iOS, Android, and progressive web applications built with modern frameworks like React, Flutter, and Node.js.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cloud & DevOps</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Seamless cloud migration, automated CI/CD pipelines, containerization with Docker/Kubernetes, and robust server management.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">IT Consulting</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Expert technology consulting to modernize legacy systems, secure enterprise data, and optimize technical infrastructure.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">UI/UX Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Immersive, human-centric user interface and experience designs that drive high engagement, conversion, and brand loyalty.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Digital Services</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Comprehensive digital marketing strategies, SEO optimization, and data-driven performance scaling for online growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-24 bg-slate-900/60 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 border border-cyan-800 text-cyan-400 text-xs font-semibold uppercase tracking-wide">
+                        Meet Our Experts
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                        Our Talented Team
+                    </h2>
+                    <p class="text-slate-400 max-w-xl">
+                        The brilliant minds driving innovation at Aveno Technologies Limited. Managed securely through our password-protected backend.
+                    </p>
+                </div>
+                <div>
+                    <button onclick="openAdminAuthModal()" class="px-5 py-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 font-semibold text-sm transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-sliders"></i> Manage Employees (Backend)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Team Grid (Dynamically Populated via JS) -->
+            <div id="teamGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dynamically rendered cards go here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 border border-cyan-800 text-cyan-400 text-xs font-semibold uppercase tracking-wide">
+                    Get In Touch
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                    Let's Build Something Great Together
+                </h2>
+                <p class="text-slate-400">
+                    Have a project in mind or want to explore career and partnership opportunities? Reach out to us.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact Info & Map Placeholder -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
+                        <h3 class="text-xl font-bold text-white">Contact Information</h3>
+                        <div class="space-y-4 text-slate-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-white block text-sm">Office Address</strong>
+                                    <span class="text-slate-400 text-sm">House # 684, 3rd Floor, Avenue 6,<br>Mirpur DOHS, Dhaka-1216, Bangladesh</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-white block text-sm">Email Address</strong>
+                                    <span class="text-slate-400 text-sm">contact@avenotech.com</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-white block text-sm">Phone Number</strong>
+                                    <span class="text-slate-400 text-sm">+880 9600-000000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Map Placeholder -->
+                    <div class="rounded-3xl overflow-hidden border border-slate-800 h-64 relative bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#0ea5e9_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                        <div class="text-center relative z-10 p-6">
+                            <div class="w-12 h-12 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center mx-auto mb-3 text-xl shadow-lg">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <h4 class="text-white font-bold text-sm">Mirpur DOHS, Dhaka-1216</h4>
+                            <p class="text-slate-400 text-xs mt-1">House # 684, 3rd Floor, Avenue 6</p>
+                            <span class="inline-block mt-3 px-3 py-1 bg-cyan-950 border border-cyan-800 text-cyan-400 text-[10px] font-semibold rounded-full">Interactive Map Location</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form onsubmit="handleContactSubmit(event)" class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Send Us a Message</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Your Name</label>
+                                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="John Doe">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Your Email</label>
+                                <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Subject</label>
+                            <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Project Inquiry / Consultation">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Message</label>
+                            <textarea rows="5" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none" placeholder="Tell us about your project requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-xl shadow-cyan-500/20 hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                            <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight text-white">Aveno <span class="text-cyan-400">Tech</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+                        Aveno Technologies Limited is a leading software & IT solutions company based in Mirpur DOHS, Dhaka, delivering excellence worldwide.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-cyan-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-cyan-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-cyan-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-cyan-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-cyan-400 transition-colors">Services</a></li>
+                        <li><a href="#team" class="hover:text-cyan-400 transition-colors">Our Team</a></li>
+                        <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Services</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#services" class="hover:text-cyan-400 transition-colors">Software Development</a></li>
+                        <li><a href="#services" class="hover:text-cyan-400 transition-colors">Web & Mobile Apps</a></li>
+                        <li><a href="#services" class="hover:text-cyan-400 transition-colors">Cloud & DevOps</a></li>
+                        <li><a href="#services" class="hover:text-cyan-400 transition-colors">IT Consulting</a></li>
+                        <li><a href="#services" class="hover:text-cyan-400 transition-colors">UI/UX Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Location</h4>
+                    <p class="text-sm text-slate-400">
+                        House # 684, 3rd Floor, Avenue 6,<br>
+                        Mirpur DOHS, Dhaka-1216,<br>
+                        Bangladesh
+                    </p>
+                    <button onclick="openAdminAuthModal()" class="text-xs text-cyan-400 hover:underline flex items-center gap-1 mt-2">
+                        <i class="fa-solid fa-lock"></i> Employee Admin Portal
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 Aveno Technologies Limited. All rights reserved.</p>
+                <p>Designed with excellence in Mirpur DOHS, Dhaka</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Authentication Password Modal -->
+    <div id="adminAuthModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-md p-8 shadow-2xl space-y-6 relative">
+            <button onclick="closeAdminAuthModal()" class="absolute top-6 right-6 w-8 h-8 rounded-lg bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mx-auto text-xl shadow-lg">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Admin Authentication</h3>
+                <p class="text-xs text-slate-400">Enter password to access employee management database.</p>
+            </div>
+            <form onsubmit="handleAdminAuth(event)" class="space-y-4">
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Admin Password</label>
+                    <div class="relative">
+                        <input type="password" id="adminPasswordInput" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Enter secure password...">
+                    </div>
+                </div>
+                <div id="authErrorMsg" class="hidden text-xs text-rose-400 font-medium text-center">
+                    Incorrect password! Please try again.
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/20 hover:opacity-95 transition-opacity">
+                    Access Dashboard <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Manager Modal -->
+    <div id="adminModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-950/50">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Employee Backend & Directory Manager</h3>
+                        <p class="text-xs text-slate-400">Add, edit or remove employees (Name, Designation, and Photo URL)</p>
+                    </div>
+                </div>
+                <button onclick="closeAdminModal()" class="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto space-y-8 flex-1">
+                <!-- Add / Edit Employee Form -->
+                <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-4">
+                    <h4 id="formTitle" class="text-sm font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-2">
+                        <i class="fa-solid fa-user-plus"></i> Add New Employee
+                    </h4>
+                    <form id="employeeForm" onsubmit="saveEmployee(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <input type="hidden" id="editIndex" value="-1">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-400">Employee Name</label>
+                            <input type="text" id="empName" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500" placeholder="e.g. Tanvir Ahmed">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-400">Designation</label>
+                            <input type="text" id="empDesignation" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500" placeholder="e.g. Lead Software Architect">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-400">Photo URL</label>
+                            <input type="url" id="empPhoto" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500" placeholder="https://images.unsplash.com/...">
+                        </div>
+                        <div class="md:col-span-3 flex justify-end gap-3 pt-2">
+                            <button type="button" id="cancelEditBtn" onclick="resetEmployeeForm()" class="hidden px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-semibold hover:bg-slate-700 transition-colors">Cancel Edit</button>
+                            <button type="submit" id="submitEmpBtn" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold shadow-lg hover:opacity-95 transition-opacity">Add Employee</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing Employee List Table -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center justify-between">
+                        <span>Current Employee Records</span>
+                        <span id="empCountBadge" class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800">0 Employees</span>
+                    </h4>
+                    <div class="border border-slate-800 rounded-2xl overflow-hidden bg-slate-950">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm text-slate-300">
+                                <thead class="bg-slate-900 text-slate-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <tr>
+                                        <th class="px-6 py-3">Photo</th>
+                                        <th class="px-6 py-3">Name</th>
+                                        <th class="px-6 py-3">Designation</th>
+                                        <th class="px-6 py-3 text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminTableBody" class="divide-y divide-slate-800/60">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-slate-800 bg-slate-950/50 flex justify-between items-center text-xs text-slate-400">
+                <span>Data persists locally in your browser storage.</span>
+                <button onclick="closeAdminModal()" class="px-6 py-2 bg-slate-800 text-white rounded-xl hover:bg-slate-700 font-medium">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 border border-cyan-500/40 px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+        <div id="toastIcon" class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <span id="toastMessage" class="text-sm text-white font-medium">Action completed successfully!</span>
+    </div>
+
+    <script>
+        // Initial Default Employees for Aveno Technologies Limited
+        const defaultEmployees = [
+            {
+                name: "Tanvir Hasan",
+                designation: "Chief Executive Officer & Founder",
+                photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+            },
+            {
+                name: "Mahfuza Akter",
+                designation: "Chief Technology Officer (CTO)",
+                photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+            },
+            {
+                name: "Saiful Islam",
+                designation: "Lead Full-Stack Architect",
+                photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+            },
+            {
+                name: "Nusrat Jahan",
+                designation: "Head of UI/UX Design",
+                photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop"
+            }
+        ];
+
+        // Load employees from localStorage or initialize defaults
+        function getEmployees() {
+            const data = localStorage.getItem('aveno_employees');
+            if (!data) {
+                localStorage.setItem('aveno_employees', JSON.stringify(defaultEmployees));
+                return defaultEmployees;
+            }
+            try {
+                return JSON.parse(data);
+            } catch (e) {
+                return defaultEmployees;
+            }
+        }
+
+        function saveEmployeesToStorage(emps) {
+            localStorage.setItem('aveno_employees', JSON.stringify(emps));
+            renderEmployees();
+            renderAdminTable();
+        }
+
+        // Render Public Team Section
+        function renderEmployees() {
+            const emps = getEmployees();
+            const grid = document.getElementById('teamGrid');
+            grid.innerHTML = '';
+
+            if (emps.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-500">
+                        No employees listed currently. Open the Admin Panel to add members.
+                    </div>
+                `;
+                return;
+            }
+
+            emps.forEach((emp, index) => {
+                const card = document.createElement('div');
+                card.className = "group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:-translate-y-1";
+                card.innerHTML = `
+                    <div class="aspect-[4/3] w-full overflow-hidden bg-slate-950 relative">
+                        <img src="${emp.photo}" alt="${emp.name}" onerror="this.src='https://placehold.co/400x300/082f49/eef8ff?text=No+Photo'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">${emp.name}</h3>
+                        <p class="text-xs text-cyan-400 font-medium uppercase tracking-wider mt-1">${emp.designation}</p>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-slate-400 text-xs">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-cyan-500"></i> Mirpur DOHS</span>
+                            <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Active</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render Admin Table
+        function renderAdminTable() {
+            const emps = getEmployees();
+            const tbody = document.getElementById('adminTableBody');
+            const badge = document.getElementById('empCountBadge');
+            tbody.innerHTML = '';
+            badge.innerText = `${emps.length} Employee${emps.length === 1 ? '' : 's'}`;
+
+            if (emps.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="px-6 py-8 text-center text-slate-500">No employee records found.</td></tr>`;
+                return;
+            }
+
+            emps.forEach((emp, index) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-900/50 transition-colors";
+                tr.innerHTML = `
+                    <td class="px-6 py-4">
+                        <img src="${emp.photo}" alt="${emp.name}" onerror="this.src='https://placehold.co/100x100/082f49/eef8ff?text=Img'" class="w-10 h-10 rounded-xl object-cover border border-slate-700">
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-white">${emp.name}</td>
+                    <td class="px-6 py-4 text-cyan-400 text-xs">${emp.designation}</td>
+                    <td class="px-6 py-4 text-right space-x-2">
+                        <button onclick="editEmployee(${index})" class="px-3 py-1.5 rounded-lg bg-cyan-950 border border-cyan-800 text-cyan-400 hover:bg-cyan-900 text-xs font-semibold transition-colors">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button onclick="deleteEmployee(${index})" class="px-3 py-1.5 rounded-lg bg-rose-950 border border-rose-800 text-rose-400 hover:bg-rose-900 text-xs font-semibold transition-colors">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Employee Form Handler (Add / Update)
+        function saveEmployee(e) {
+            e.preventDefault();
+            const name = document.getElementById('empName').value.trim();
+            const designation = document.getElementById('empDesignation').value.trim();
+            const photo = document.getElementById('empPhoto').value.trim();
+            const editIndex = parseInt(document.getElementById('editIndex').value);
+
+            let emps = getEmployees();
+
+            if (editIndex >= 0) {
+                emps[editIndex] = { name, designation, photo };
+                showToast("Employee record updated successfully!");
+            } else {
+                emps.push({ name, designation, photo });
+                showToast("New employee added successfully!");
+            }
+
+            saveEmployeesToStorage(emps);
+            resetEmployeeForm();
+        }
+
+        function editEmployee(index) {
+            const emps = getEmployees();
+            const emp = emps[index];
+            document.getElementById('empName').value = emp.name;
+            document.getElementById('empDesignation').value = emp.designation;
+            document.getElementById('empPhoto').value = emp.photo;
+            document.getElementById('editIndex').value = index;
+            document.getElementById('formTitle').innerHTML = `<i class="fa-solid fa-user-pen"></i> Edit Employee Record`;
+            document.getElementById('submitEmpBtn').innerText = `Update Employee`;
+            document.getElementById('cancelEditBtn').classList.remove('hidden');
+        }
+
+        function resetEmployeeForm() {
+            document.getElementById('employeeForm').reset();
+            document.getElementById('editIndex').value = -1;
+            document.getElementById('formTitle').innerHTML = `<i class="fa-solid fa-user-plus"></i> Add New Employee`;
+            document.getElementById('submitEmpBtn').innerText = `Add Employee`;
+            document.getElementById('cancelEditBtn').classList.add('hidden');
+        }
+
+        function deleteEmployee(index) {
+            if (confirm("Are you sure you want to remove this employee from the directory?")) {
+                let emps = getEmployees();
+                emps.splice(index, 1);
+                saveEmployeesToStorage(emps);
+                showToast("Employee removed successfully!");
+            }
+        }
+
+        // Admin Auth Flow
+        function openAdminAuthModal() {
+            document.getElementById('adminPasswordInput').value = '';
+            document.getElementById('authErrorMsg').classList.add('hidden');
+            document.getElementById('adminAuthModal').classList.remove('hidden');
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+        }
+
+        function handleAdminAuth(e) {
+            e.preventDefault();
+            const pwd = document.getElementById('adminPasswordInput').value;
+            const errorMsg = document.getElementById('authErrorMsg');
+
+            if (pwd === "Sakib@SMaveno2026") {
+                closeAdminAuthModal();
+                openAdminModal();
+                showToast("Admin authenticated successfully!");
+            } else {
+                errorMsg.classList.remove('hidden');
+                document.getElementById('adminPasswordInput').focus();
+            }
+        }
+
+        // Modal Controls
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+            renderAdminTable();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+            resetEmployeeForm();
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        // Contact Form Submission handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Thank you! Your message has been sent to Aveno Technologies.");
+            e.target.reset();
+        }
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        // Initialize on Load
+        window.onload = function() {
+            renderEmployees();
+        };
+    </script>
+</body>
+</html>
